@@ -1,11 +1,12 @@
-function Filter({ value, onChange }) {
+function Filter({ filter, setFilter }) {
   return (
     <label>
-      Find contacts(name)
+      Шукайте по імені
+
       <input
         type="text"
-        value={value}
-        onChange={e => onChange(e.target.value)}
+        value={filter}
+        onChange={e => setFilter(e.target.value)}
       />
     </label>
   );

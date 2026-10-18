@@ -1,12 +1,12 @@
 function ContactItem({ contact, onDelete }) {
   return (
-   <div>
-      {contact.name}: {contact.number}
+    <li>
+      <span>
+        {contact.name}: {contact.number}
+      </span>
 
-      <button onClick={() => onDelete(contact.id)}>
-        Delit
-      </button>
-   </div>
+      <button onClick={() => onDelete(contact.id)}>Видалити</button>
+    </li>
   );
 }
 

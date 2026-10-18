@@ -7,10 +7,7 @@ function ContactForm({ onAddContact }) {
   function handleSubmit(e) {
     e.preventDefault();
 
-    onAddContact({
-      name,
-      number,
-    });
+    onAddContact(name, number);
 
     setName("");
     setNumber("");
@@ -19,32 +16,32 @@ function ContactForm({ onAddContact }) {
   return (
     <form onSubmit={handleSubmit}>
       <label>
-        Name
+        name
         <input
           type="text"
           name="name"
           value={name}
           onChange={e => setName(e.target.value)}
           pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-          title="Name may contain only letters, apostrophe, dash and spaces."
-          required
+          title="Name containes only letters and no numbers"
+          
         />
       </label>
 
       <label>
-        Number
+        number
         <input
           type="tel"
           name="number"
           value={number}
           onChange={e => setNumber(e.target.value)}
           pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
-          title="Phone number must be digits and can contain spaces, dashes and parentheses."
-          required
+          title="Phone number contained only numbers."
+      
         />
       </label>
 
-      <button type="submit">Add contact</button>
+      <button type="submit">Контакти додайте</button>
     </form>
   );
 }
